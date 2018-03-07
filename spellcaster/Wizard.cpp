@@ -2,7 +2,7 @@
 
 Wizard::Wizard(const char* title, int hitPoints, int damage, int mana)
     : SpellCaster(title, hitPoints, damage, mana) {
-        this->magicAbility = new MagicAbility(this, new FireBall(30, 30));
+        this->magicAbility = new MagicAbility(this, new SpellBook());//new FireBall(30, 30));
 }
 
 Wizard::~Wizard() {}
@@ -16,6 +16,6 @@ Wizard::~Wizard() {}
 //    this->spell = this->owner->spellBook->changeSpell(spellName); //newSpell; //new Spell(this->owner->spellBook->changeSpell(spellName));
 //}
 
-void Wizard::changeSpell(Spell* newSpell) {
+void Wizard::changeSpell(int newSpell) {
     SpellCaster::changeSpell(newSpell);//this->magicAbility = new MagicAbility(this, this->spellBook->changeSpell(spellName));
 }

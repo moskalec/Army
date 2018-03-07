@@ -1,15 +1,17 @@
 #include "MagicAbility.h"
 
-MagicAbility::MagicAbility(SpellCaster* owner, Spell* spell)
-    : owner(owner), spell(spell) {}
+MagicAbility::MagicAbility(SpellCaster* owner, SpellBook* spellBook)
+    : owner(owner), spellBook(spellBook) {
+}
 
 MagicAbility::~MagicAbility() {
     delete(this->spell);
+    delete(this->spellBook);
 }
 
-void MagicAbility::changeSpell(Spell* newSpell) {
+void MagicAbility::changeSpell(int spellName) {     //Spell* newSpell) {
     delete(this->spell);
-    this->spell = newSpell;
+    this->spell = this->spellBook->changeSpell(spellName);
 }
 
 void MagicAbility::cast(Unit* enemy) {

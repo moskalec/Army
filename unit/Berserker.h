@@ -9,7 +9,7 @@ public:
     Berserker(const char* title, int hitPoints, int damage);
     virtual ~Berserker();
 
-    virtual void takeMagicDamage(int dmg);
+    void takeMagicDamage(int dmg);
 };
 
 #endif // BERSERKER_H

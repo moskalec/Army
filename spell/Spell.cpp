@@ -12,4 +12,5 @@ int Spell::getActionPoints() const {
 int Spell::getCost() const {
     return this->cost;
 }
-void Spell::action(Unit* target) {}
+void Spell::action(Unit* target) {
+}
