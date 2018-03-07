@@ -55,6 +55,37 @@ TEST_CASE( "Test Werewolf class" ) {
             REQUIRE( werewolf->getHitPoints() == 0 );
         }
     }
+    SECTION( "Wolf::takeMagicDamage tests" ) {
+
+        werewolf->transform(new State("Wolf", 250, 50));
+
+        REQUIRE( werewolf->getTitle() == "Wolf" );
+        REQUIRE( werewolf->getHitPoints() == 250 );
+        REQUIRE( werewolf->getHitPointsLimit() == 250 );
+        REQUIRE( werewolf->getDamage() == 50 );
+
+        int damage = 10;
+        int iterations = werewolf->getHitPoints() / damage;
+
+        for ( int i = 1; i <= iterations; i++ ) {
+            werewolf->takeMagicDamage(damage);
+            int expectedHP = werewolf->getHitPointsLimit() - damage * i;
+            REQUIRE( werewolf->getHitPoints() == expectedHP );
+        }
+
+        try {
+            werewolf->takeMagicDamage(damage);
+        } catch ( OutOfHitPointsException obj ) {
+            REQUIRE( werewolf->getHitPoints() == 0 );
+        }
+
+        try {
+            werewolf->addHitPoints(damage);
+        } catch ( OutOfHitPointsException obj ) {
+            REQUIRE( werewolf->getHitPoints() == 0 );
+        }
+    }
+
     SECTION( "Werewolf::addHitPoints tests" ) {
         werewolf->takeDamage(50);
         REQUIRE( werewolf->getHitPoints() == 50 );
@@ -104,6 +135,56 @@ TEST_CASE( "Test Werewolf class" ) {
         } catch ( OutOfHitPointsException obj ) {
             REQUIRE( enemy->getHitPoints() == 0 );
             REQUIRE( werewolf->getHitPoints() == 60 );
+        }
+
+    }
+    SECTION( "Wolf transform tests" ) {
+        Soldier* enemy = new Soldier("Enemy", 150, 20);
+
+
+        REQUIRE( werewolf->getTitle() == "Werewolf" );
+        REQUIRE( werewolf->getHitPoints() == 100 );
+        REQUIRE( werewolf->getHitPointsLimit() == 100 );
+        REQUIRE( werewolf->getDamage() == 20 );
+
+        REQUIRE( enemy->getTitle() == "Enemy" );
+        REQUIRE( enemy->getHitPoints() == 150 );
+        REQUIRE( enemy->getHitPointsLimit() == 150 );
+        REQUIRE( enemy->getDamage() == 20 );
+
+        werewolf->transform(new State("Wolf", 250, 50));
+
+        REQUIRE( werewolf->getTitle() == "Wolf" );
+        REQUIRE( werewolf->getHitPoints() == 250 );
+        REQUIRE( werewolf->getHitPointsLimit() == 250 );
+        REQUIRE( werewolf->getDamage() == 50 );
+
+        werewolf->attack(enemy);
+
+        REQUIRE( enemy->getHitPoints() == 100 );
+        REQUIRE( werewolf->getHitPoints() == 240 );
+
+        werewolf->attack(enemy);
+
+        REQUIRE( enemy->getHitPoints() == 50 );
+        REQUIRE( werewolf->getHitPoints() == 230 );
+
+        enemy->takeDamage(40);
+
+        REQUIRE( enemy->getHitPoints() == 10 );
+
+        try {
+            werewolf->attack(enemy);
+        } catch ( OutOfHitPointsException obj ) {
+            REQUIRE( enemy->getHitPoints() == 0 );
+            REQUIRE( werewolf->getHitPoints() == 230 );
+        }
+
+        try {
+            enemy->attack(werewolf);
+        } catch ( OutOfHitPointsException obj ) {
+            REQUIRE( enemy->getHitPoints() == 0 );
+            REQUIRE( werewolf->getHitPoints() == 230 );
         }
 
     }

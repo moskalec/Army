@@ -41,4 +41,4 @@ add_executable(army
         unit/Soldier.h
         unit/Unit.cpp
         unit/Unit.h
-        exceptions.h unit/Berserker.h unit/Berserker.cpp tests/test_berserker.cpp unit/Vampire.h unit/Vampire.cpp ability/VampireAbility.h ability/VampireAbility.cpp tests/test_vampire.cpp unit/Werewolf.h unit/Werewolf.cpp ability/WerewolfAbility.h ability/Werewolf.cpp tests/test_werewolf.cpp)
+        exceptions.h unit/Berserker.h unit/Berserker.cpp tests/test_berserker.cpp unit/Vampire.h unit/Vampire.cpp ability/VampireAbility.h ability/VampireAbility.cpp tests/test_vampire.cpp unit/Werewolf.h unit/Werewolf.cpp tests/test_werewolf.cpp)

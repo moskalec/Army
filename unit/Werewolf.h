@@ -9,8 +9,8 @@ public:
     Werewolf(const char* title, int hitPoints, int damage);
     virtual ~Werewolf();
 
-    virtual void takeMagicDamage(int dmg);
-    void transform();
+    void takeMagicDamage(int dmg);
+    void transform(State* newState);
 };
 
 #endif // WEREWOLF_H

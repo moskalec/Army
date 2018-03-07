@@ -9,11 +9,15 @@ Werewolf::~Werewolf() {}
 
 
 void Werewolf::takeMagicDamage(int dmg) {
-    this->state->takeMagicDamage(this->state->getTitle() == "Wolf" ? dmg * 2 : dmg);
+    if( this->getTitle() == "Wolf") {
+        Unit::takeMagicDamage(dmg*2);
+    } else {
+        Unit::takeMagicDamage(dmg);
+    }
 }
 
-void Werewolf::transform() {
+void Werewolf::transform(State* newState) {
     this->ensureIsAlive();
     delete(this->state);
-    this->state = new State("Wolf", 250, 50);
+    this->state = newState;
 }

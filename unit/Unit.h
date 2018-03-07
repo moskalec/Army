@@ -25,6 +25,7 @@ class Unit {
         void addHitPoints(int hp);
         void takeDamage(int dmg);
 
+        virtual void transform();
         virtual void takeMagicDamage(int dmg);
         virtual void attack(Unit* enemy);
         virtual void counterAttack(Unit* enemy);
