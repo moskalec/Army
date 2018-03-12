@@ -10,7 +10,7 @@ class Wizard : public SpellCaster {
         Wizard(const char* title, int hitPoints, int damage, int mana);
         virtual ~Wizard();
 
-        void changeSpell(int newSpell);
+//        void changeSpell(int newSpell);
 };
 
 #endif // WIZARD_H

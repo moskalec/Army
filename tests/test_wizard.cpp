@@ -17,26 +17,26 @@ TEST_CASE( "Test Wizard class" ) {
     REQUIRE( wizard->getDamage() == 10 );
     REQUIRE( wizard->getMana() == 150 );
     REQUIRE( wizard->getManaLimit() == 150 );
-//
-//    wizard->attack(soldier);
-//    REQUIRE( wizard->getHitPoints() == 90 );
-//    REQUIRE( soldier->getHitPoints() == 140 );
-//
-//    wizard->cast(soldier);
-//    REQUIRE( soldier->getHitPoints() == 110 );
-//    REQUIRE( wizard->getHitPoints() == 90 );
-//    REQUIRE( wizard->getMana() == 120 );
-//
-//    wizard->changeSpell(HEAL);
-//    wizard->cast(soldier);
-//    REQUIRE( soldier->getHitPoints() == 140 );
+
+    wizard->attack(soldier);
+    REQUIRE( wizard->getHitPoints() == 90 );
+    REQUIRE( soldier->getHitPoints() == 140 );
+
+    wizard->cast(soldier);
+    REQUIRE( soldier->getHitPoints() == 110 );
+    REQUIRE( wizard->getHitPoints() == 90 );
+    REQUIRE( wizard->getMana() == 120 );
+
+    wizard->changeSpell(HEAL);
+    wizard->cast(soldier);
+    REQUIRE( soldier->getHitPoints() == 140 );
 //    REQUIRE( wizard->getHitPoints() == 90 );
 //    REQUIRE( wizard->getMana() == 90 );
-//
+
 //    wizard->cast(soldier);
 //    wizard->cast(soldier);
 //    wizard->cast(soldier);
-//
+
 //    REQUIRE( soldier->getHitPoints() == 150 );
 //    REQUIRE( wizard->getHitPoints() == 90 );
 //    REQUIRE( wizard->getMana() == 0 );

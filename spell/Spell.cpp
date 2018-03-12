@@ -1,7 +1,9 @@
 #include "Spell.h"
 
-Spell::Spell(int actionPoints, int cost)
-    : actionPoints(actionPoints), cost(cost) {}
+Spell::Spell(int actionPoints, int cost) {//: actionPoints(actionPoints), cost(cost) {}
+    this->actionPoints = actionPoints;
+    this->cost = cost;
+}
 
 Spell::~Spell() {}
 

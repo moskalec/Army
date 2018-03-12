@@ -2,6 +2,7 @@
 
 MagicAbility::MagicAbility(SpellCaster* owner, SpellBook* spellBook)
     : owner(owner), spellBook(spellBook) {
+    this->spell = this->spellBook->changeSpell(FIRE_BALL);
 }
 
 MagicAbility::~MagicAbility() {
