@@ -1,21 +1,22 @@
-#ifndef PRIEST_ABILITY_H
-#define PRIEST_ABILITY_H
+#ifndef WARLOCK_ABILITY_H
+#define WARLOCK_ABILITY_H
 
 #include <map>
 #include "../spell/Spell.h"
 #include "../spellcaster/SpellCaster.h"
 
 
+class Demon;
 class SpellCaster;
 class Spell;
 
-class PriestAbility : MagicAbility {
+class WarlockAbility : MagicAbility {
 public:
-    PriestAbility(SpellCaster* owner, Spell* spell);
-    virtual ~PriestAbility();
+    WarlockAbility(SpellCaster* owner, Spell* spell);
+    virtual ~WarlockAbility();
 
     void changeSpell(Spell* newSpell);
     virtual void cast(SpellCaster* owner, Unit* enemy);
 };
 
-#endif // PRIEST_ABILITY_H
+#endif // WARLOCK_ABILITY_H

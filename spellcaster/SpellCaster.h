@@ -15,12 +15,13 @@ class SpellCaster: public Unit {
         MagicAbility* magicAbility;
 
     public:
-        SpellCaster(const char* title, int hitPoints, int damage, int mana, bool battleMagician);
+        SpellCaster(const char* title, int hitPoints, int damage, int mana, bool battleMagician, bool isWarlock);
         virtual ~SpellCaster();
 
         int getMana() const;
         int getManaLimit() const;
         bool getBattleMagician() const;
+        bool getIsWarlock() const;
 
         void addMana(int extra);
         void spendMana(int cost);

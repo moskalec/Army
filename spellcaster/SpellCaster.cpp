@@ -1,7 +1,7 @@
 #include "SpellCaster.h"
 
-SpellCaster::SpellCaster(const char* title, int hitPoints, int damage, int mana, bool battleMagician)
-    : Unit(title, hitPoints, damage), magicState(new MagicState(mana, battleMagician)) {
+SpellCaster::SpellCaster(const char* title, int hitPoints, int damage, int mana, bool battleMagician, bool isWarlock)
+    : Unit(title, hitPoints, damage), magicState(new MagicState(mana, battleMagician, isWarlock)) {
         this->ability = new DefaultAbility(this);
     }
 
@@ -20,6 +20,10 @@ int SpellCaster::getManaLimit() const {
 
 bool SpellCaster::getBattleMagician() const {
     return this->magicState->getBattleMagician();
+}
+
+bool SpellCaster::getIsWarlock() const {
+    return this->magicState->getIsWarlock();
 }
 
 void SpellCaster::addMana(int extra) {

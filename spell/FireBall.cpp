@@ -5,9 +5,11 @@ FireBall::FireBall(int actionPoints, int cost) : Spell(actionPoints, cost) {}
 FireBall::~FireBall() {}
 
 void FireBall::action(SpellCaster* owner, Unit* target) {
-    if ( owner->getBattleMagician() ) {
+    if ( owner->getIsWarlock() ) {
+        target->takeMagicDamage(this->getActionPoints() / 2);
+    } else if ( owner->getBattleMagician() ) {
         target->takeMagicDamage(this->getActionPoints());
-    } else {
+    } else if ( !owner->getBattleMagician() ) {
         if (target->isVampire()) {
             target->takeMagicDamage(this->getActionPoints() * 2);
         } else {

@@ -2,7 +2,7 @@
 #include "../state/MagicState.h"
 
 TEST_CASE( "Test MagicState class" ) {
-    MagicState* state = new MagicState(150, true);
+    MagicState* state = new MagicState(150, true, true);
 
     REQUIRE( state->getMana() == 150 );
     REQUIRE( state->getManaLimit() == 150 );
