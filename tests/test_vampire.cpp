@@ -11,6 +11,7 @@ TEST_CASE( "Test Vampire class" ) {
     REQUIRE( vampire->getHitPoints() == 100 );
     REQUIRE( vampire->getHitPointsLimit() == 100 );
     REQUIRE( vampire->getDamage() == 20 );
+    REQUIRE( vampire->isVampire() == true );
 
     SECTION( "Vampire::takeDamage tests" ) {
         int damage = 10;

@@ -12,8 +12,8 @@ void MagicAbility::changeSpell(Spell* newSpell) {
     this->spell = newSpell;
 }
 
-void MagicAbility::cast(Unit* enemy) {
+void MagicAbility::cast(SpellCaster* owner, Unit* enemy) {
     this->owner->ensureIsAlive();
     this->owner->spendMana(this->spell->getCost());
-    this->spell->action(enemy);
+    this->spell->action(owner, enemy);
 }

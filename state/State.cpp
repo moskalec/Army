@@ -69,3 +69,11 @@ void State::_takeMagicDamage(int dmg) {
 void State::takeMagicDamage(int dmg) {
     this->_takeMagicDamage(dmg);
 }
+
+bool State::isVampire() {
+    return this->vampire;
+}
+
+void State::turnVampire() {
+    this->vampire = true;
+}

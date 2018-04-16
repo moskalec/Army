@@ -2,8 +2,10 @@
 #include "../unit/Soldier.h"
 #include "../spell/FireBall.h"
 #include "../spell/Heal.h"
+#include "../spellcaster/Wizard.h"
 
 TEST_CASE( "Test spell classes" ) {
+    Wizard* wizard = new Wizard("Wizard", 100, 10, 150);
     Soldier* soldier = new Soldier("Soldier", 150, 20);
 
     REQUIRE( soldier->getTitle() == "Soldier" );
@@ -21,11 +23,11 @@ TEST_CASE( "Test spell classes" ) {
     REQUIRE( heal->getActionPoints() == 30 );
     REQUIRE( heal->getCost() == 30 );
 
-    fb->action(soldier);
+    fb->action(wizard, soldier);
 
     REQUIRE( soldier->getHitPoints() == 120 );
 
-    heal->action(soldier);
+    heal->action(wizard, soldier);
 
-    REQUIRE( soldier->getHitPoints() == 150 );
+    REQUIRE( soldier->getHitPoints() == 135 );
 }

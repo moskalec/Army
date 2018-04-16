@@ -25,6 +25,9 @@ class Unit {
         void addHitPoints(int hp);
         void takeDamage(int dmg);
 
+        bool isVampire();
+        void turnVampire();
+
         virtual void transform();
         virtual void takeMagicDamage(int dmg);
         virtual void attack(Unit* enemy);

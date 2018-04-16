@@ -7,7 +7,7 @@ class Heal : public Spell {
     public:
         Heal(int actionPoints, int cost);
         virtual ~Heal();
-        virtual void action(Unit* target);
+        virtual void action(SpellCaster* owner, Unit* target);
 };
 
 #endif // HEAL_H

@@ -49,4 +49,12 @@ void Unit::counterAttack(Unit* enemy) {
 
 void Unit::transform() {
 
-};
+}
+
+bool Unit::isVampire() {
+    return this->state->isVampire();
+}
+
+void Unit::turnVampire() {
+    this->state->turnVampire();
+}

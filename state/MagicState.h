@@ -8,13 +8,15 @@ class MagicState {
     protected:
         int mana;
         int manaLimit;
+        bool battleMagician;
 
     public:
-        MagicState(int mana);
+        MagicState(int mana, bool battleMagician);
         virtual ~MagicState();
 
         int getMana() const;
         int getManaLimit() const;
+        bool getBattleMagician();
 
         void addMana(int extra);
         void spendMana(int cost);

@@ -11,7 +11,7 @@ TEST_CASE( "Test Berserker class" ) {
     REQUIRE( wizard->getHitPoints() == 85 );
     REQUIRE( berserker->getHitPoints() == 190 );
 
-    wizard->cast(berserker);
+    wizard->cast(wizard, berserker);
     REQUIRE( berserker->getHitPoints() == 190 );
     REQUIRE( wizard->getHitPoints() == 85 );
     REQUIRE( wizard->getMana() == 120 );

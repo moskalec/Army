@@ -1,6 +1,6 @@
 #include "MagicState.h"
 
-MagicState::MagicState(int mana) : mana(mana), manaLimit(mana) {}
+MagicState::MagicState(int mana, bool battleMagician) : mana(mana), manaLimit(mana), battleMagician(battleMagician) {}
 
 MagicState::~MagicState() {}
 
@@ -10,6 +10,10 @@ int MagicState::getMana() const {
 
 int MagicState::getManaLimit() const {
     return this->manaLimit;
+}
+
+bool MagicState::getBattleMagician() {
+    return this->battleMagician;
 }
 
 void MagicState::addMana(int extra) {

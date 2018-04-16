@@ -11,6 +11,8 @@ class State {
         int hitPointsLimit;
         int damage;
 
+        bool vampire;
+
         void _takeDamage(int dmg);
         void _takeMagicDamage(int dmg);
 
@@ -28,6 +30,9 @@ class State {
         void addHitPoints(int hp);
         void takeDamage(int dmg);
         void takeMagicDamage(int dmg);
+
+        bool isVampire();
+        void turnVampire();
 };
 
 #endif // STATE_H

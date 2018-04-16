@@ -7,6 +7,7 @@
 #include "../ability/DefaultAbility.h"
 
 class MagicAbility;
+class Spell;
 
 class SpellCaster: public Unit {
     protected:
@@ -14,17 +15,18 @@ class SpellCaster: public Unit {
         MagicAbility* magicAbility;
 
     public:
-        SpellCaster(const char* title, int hitPoints, int damage, int mana);
+        SpellCaster(const char* title, int hitPoints, int damage, int mana, bool battleMagician);
         virtual ~SpellCaster();
 
         int getMana() const;
         int getManaLimit() const;
+        bool getBattleMagician() const;
 
         void addMana(int extra);
         void spendMana(int cost);
 
         void changeSpell(Spell* newSpell);
-        virtual void cast(Unit* enemy);
+        virtual void cast(SpellCaster* owner, Unit* enemy);
 
 };
 

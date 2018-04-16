@@ -18,32 +18,33 @@ TEST_CASE( "Test Wizard class" ) {
     REQUIRE( wizard->getDamage() == 10 );
     REQUIRE( wizard->getMana() == 150 );
     REQUIRE( wizard->getManaLimit() == 150 );
+    REQUIRE( wizard->getBattleMagician() == true );
 
     wizard->attack(soldier);
     REQUIRE( wizard->getHitPoints() == 90 );
     REQUIRE( soldier->getHitPoints() == 140 );
 
-    wizard->cast(soldier);
+    wizard->cast(wizard, soldier);
     REQUIRE( soldier->getHitPoints() == 110 );
     REQUIRE( wizard->getHitPoints() == 90 );
     REQUIRE( wizard->getMana() == 120 );
 
     wizard->changeSpell(new Heal(30, 30));
-    wizard->cast(soldier);
-    REQUIRE( soldier->getHitPoints() == 140 );
+    wizard->cast(wizard, soldier);
+    REQUIRE( soldier->getHitPoints() == 125 );
     REQUIRE( wizard->getHitPoints() == 90 );
     REQUIRE( wizard->getMana() == 90 );
 
-    wizard->cast(soldier);
-    wizard->cast(soldier);
-    wizard->cast(soldier);
+    wizard->cast(wizard, soldier);
+    wizard->cast(wizard, soldier);
+    wizard->cast(wizard, soldier);
 
     REQUIRE( soldier->getHitPoints() == 150 );
     REQUIRE( wizard->getHitPoints() == 90 );
     REQUIRE( wizard->getMana() == 0 );
 
     try {
-        wizard->cast(soldier);
+        wizard->cast(wizard, soldier);
     } catch (OutOfManaException obj) {
         REQUIRE( wizard->getMana() == 0 );
     }

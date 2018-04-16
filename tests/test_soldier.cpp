@@ -1,7 +1,9 @@
 #include "catch.hpp"
 #include "../unit/Soldier.h"
+#include "../spellcaster/Wizard.h"
 
 TEST_CASE( "Test Soldier class" ) {
+    Wizard* wizard = new Wizard("Wizard", 100, 10, 150);
     Soldier* soldier = new Soldier("Soldier", 150, 20);
 
     REQUIRE( soldier->getTitle() == "Soldier" );
