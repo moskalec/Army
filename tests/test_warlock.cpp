@@ -56,10 +56,11 @@ TEST_CASE( "Test Warlock class" ) {
     warlock->addMana(200);
     REQUIRE( warlock->getMana() == 150 );
 
-    warlock->summonDemon(warlock);
+//    warlock->summonDemon(warlock);
+    Demon* demon = warlock->summonDemon(warlock);
 
-//    REQUIRE( warlock->summonDemon(warlock)->getTitle() == "Demon" );
-    REQUIRE( warlock->summonDemon(warlock)->getHitPoints() == 100 );
+//    REQUIRE( demon->getTitle() == "Demon" );
+    REQUIRE( demon->getHitPoints() == 100 );
     REQUIRE( warlock->summonDemon(warlock)->getHitPointsLimit() == 100 );
     REQUIRE( warlock->summonDemon(warlock)->getDamage() == 10 );
 }

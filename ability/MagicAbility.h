@@ -19,7 +19,7 @@ class MagicAbility {
         virtual ~MagicAbility();
 
         void changeSpell(Spell* newSpell);
-        virtual void cast(SpellCaster* owner, Unit* enemy);
+        void cast(SpellCaster* owner, Unit* enemy);
 };
 
 #endif // MAGIC_ABILITY_H

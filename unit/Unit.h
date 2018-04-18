@@ -3,10 +3,12 @@
 
 #include "../state/State.h"
 #include "../ability/Ability.h"
+#include "../interface/Observer.h"
+#include "../interface/Observerable.h"
 
 class Ability;
 
-class Unit {
+class Unit : public Observer, public Observerable {
     protected:
         State* state;
         Ability* ability;
