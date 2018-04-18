@@ -73,8 +73,11 @@ TEST_CASE( "Test Necromancer class" ) {
         necromancer->cast(necromancer, soldier);
         necromancer->cast(necromancer, soldier);
         REQUIRE( soldier->getHitPoints() == 0 );
-        REQUIRE( necromancer->getHitPoints() == 90 );
-        necromancer->update(soldier);
+        try {
+            soldier->attack(necromancer);
+        } catch (OutOfHitPointsException obj) {
+            REQUIRE( necromancer->getHitPoints() == 100 );
+        }
         REQUIRE( necromancer->getHitPoints() == 100 );
     }
 }

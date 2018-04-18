@@ -14,6 +14,7 @@ void Necromancer::changeSpell(Spell* newSpell) {
 void Necromancer::attack(Unit* enemy) {
     Unit::attack(enemy);
     this->addObserverable(enemy);
+//    this->update(enemy);
 }
 
 void Necromancer::update(Observerable* enemy) {

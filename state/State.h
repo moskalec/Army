@@ -4,6 +4,11 @@
 #include <iostream>
 #include "../exceptions.h"
 
+#include "../interface/Observerable.h"
+
+class Observerable;
+
+
 class State {
     protected:
         const char* title;

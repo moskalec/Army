@@ -9,6 +9,9 @@ Unit::~Unit() {
 }
 
 void Unit::ensureIsAlive() {
+    if ( this->state->getHitPoints() == 0 ) {
+        this->notify();
+    }
     this->state->ensureIsAlive();
 }
 

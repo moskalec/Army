@@ -3,8 +3,6 @@
 
 #include "Ability.h"
 
-//class Ability;
-
 class DefaultAbility : public Ability {
     public:
         DefaultAbility(Unit* owner);
