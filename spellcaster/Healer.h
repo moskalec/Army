@@ -10,7 +10,7 @@ public:
     Healer(const char* title, int hitPoints, int damage, int mana);
     virtual ~Healer();
 
-    void changeSpell(Spell* newSpell);
+    void changeSpell(SPELL_NAME newSpell);
 };
 
 #endif // HEALER_H

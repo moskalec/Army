@@ -30,7 +30,7 @@ TEST_CASE( "Test Warlock class" ) {
     REQUIRE( warlock->getHitPoints() == 90 );
     REQUIRE( warlock->getMana() == 120 );
 
-    warlock->changeSpell(new Heal(30, 30));
+    warlock->changeSpell(HEAL);
     warlock->cast(warlock, soldier);
     REQUIRE( soldier->getHitPoints() == 140 );
     REQUIRE( warlock->getHitPoints() == 90 );

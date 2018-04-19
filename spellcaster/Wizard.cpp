@@ -7,6 +7,6 @@ Wizard::Wizard(const char* title, int hitPoints, int damage, int mana)
 
 Wizard::~Wizard() {}
 
-void Wizard::changeSpell(Spell* newSpell) {
+void Wizard::changeSpell(SPELL_NAME newSpell) {
     SpellCaster::changeSpell(newSpell);
 }

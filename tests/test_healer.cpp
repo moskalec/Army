@@ -29,7 +29,7 @@ TEST_CASE( "Test Priest class" ) {
     REQUIRE( healer->getHitPoints() == 90 );
     REQUIRE( healer->getMana() == 120 );
 
-    healer->changeSpell(new Heal(30, 30));
+    healer->changeSpell(HEAL);
     healer->cast(healer, soldier);
     REQUIRE( soldier->getHitPoints() == 150 );
     REQUIRE( healer->getHitPoints() == 90 );

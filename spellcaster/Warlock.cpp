@@ -6,8 +6,7 @@ Warlock::Warlock(const char* title, int hitPoint, int damage, int manaPoint) : S
 
 Warlock::~Warlock() {}
 
-
-void Warlock::changeSpell(Spell* newSpell) {
+void Warlock::changeSpell(SPELL_NAME newSpell) {
     SpellCaster::changeSpell(newSpell);
 }
 

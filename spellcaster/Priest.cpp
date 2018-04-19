@@ -7,6 +7,6 @@ Priest::Priest(const char* title, int hitPoints, int damage, int mana)
 
 Priest::~Priest() {}
 
-void Priest::changeSpell(Spell* newSpell) {
+void Priest::changeSpell(SPELL_NAME newSpell) {
     SpellCaster::changeSpell(newSpell);
 }

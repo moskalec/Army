@@ -8,7 +8,6 @@ class Observer;
 
 class Observerable {
     protected:
-//        Observer* customer;
         std::set<Observer*>* observerList;
 
     public:

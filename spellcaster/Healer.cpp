@@ -7,6 +7,6 @@ Healer::Healer(const char* title, int hitPoints, int damage, int mana)
 
 Healer::~Healer() {}
 
-void Healer::changeSpell(Spell* newSpell) {
+void Healer::changeSpell(SPELL_NAME newSpell) {
     SpellCaster::changeSpell(newSpell);
 }

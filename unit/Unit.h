@@ -8,6 +8,11 @@
 
 class Ability;
 
+enum SPELL_NAME {
+    FIRE_BALL=1,
+    HEAL
+};
+
 class Unit : public Observer, public Observerable {
     protected:
         State* state;

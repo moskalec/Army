@@ -4,13 +4,12 @@
 #include "SpellCaster.h"
 #include "../spell/FireBall.h"
 
-
 class Wizard : public SpellCaster {
     public:
         Wizard(const char* title, int hitPoints, int damage, int mana);
         virtual ~Wizard();
 
-        void changeSpell(Spell* newSpell);
+        void changeSpell(SPELL_NAME newSpell);
 };
 
 #endif // WIZARD_H

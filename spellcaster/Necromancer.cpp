@@ -7,7 +7,7 @@ Necromancer::Necromancer(const char* title, int hitPoints, int damage, int mana)
 
 Necromancer::~Necromancer() {}
 
-void Necromancer::changeSpell(Spell* newSpell) {
+void Necromancer::changeSpell(SPELL_NAME newSpell) {
     SpellCaster::changeSpell(newSpell);
 }
 

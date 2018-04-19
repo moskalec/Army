@@ -4,6 +4,8 @@
 #include "Spell.h"
 #include "../spellcaster/SpellCaster.h"
 
+class SpellCaster;
+
 class FireBall : public Spell {
     public:
         FireBall(int actionPoints, int cost);

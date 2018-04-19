@@ -10,7 +10,7 @@ public:
     Warlock(const char* title, int hitPoints, int damage, int mana);
     virtual ~Warlock();
 
-    void changeSpell(Spell* newSpell);
+    void changeSpell(SPELL_NAME newSpell);
 
     Demon* summonDemon(Unit* owner);
 };

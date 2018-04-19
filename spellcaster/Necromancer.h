@@ -3,7 +3,6 @@
 
 #include "SpellCaster.h"
 #include "../spell/FireBall.h"
-
 #include "../interface/Observerable.h"
 
 class Necromancer : public SpellCaster {
@@ -14,7 +13,7 @@ class Necromancer : public SpellCaster {
         virtual void attack(Unit* enemy);
         virtual void update(Observerable* customer);
 
-        void changeSpell(Spell* newSpell);
+        void changeSpell(SPELL_NAME newSpell);
 };
 
 #endif // NECROMANCER_H
